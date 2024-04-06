@@ -95,4 +95,12 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Cant-Code Maven Packages</name>
+            <url>https://maven.pkg.github.com/cant-code/keycloak-event-listener-activemq</url>
+        </repository>
+    </distributionManagement>
+
 </project>
