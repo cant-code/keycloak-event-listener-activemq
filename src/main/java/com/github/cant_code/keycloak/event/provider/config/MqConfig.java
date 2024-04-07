@@ -21,7 +21,7 @@ public class MqConfig {
         mqConfig.brokerUrl = getConfigFromScope(config, "brokerUrl", "tcp://localhost:61616");
         mqConfig.user = getConfigFromScope(config, "user", "artemis");
         mqConfig.password = getConfigFromScope(config, "password", "artemis");
-        mqConfig.queue = getConfigFromScope(config, "queue", "queue/keycloak");
+        mqConfig.queue = getConfigFromScope(config, "queue", "jms/keycloak");
 
         return mqConfig;
     }
