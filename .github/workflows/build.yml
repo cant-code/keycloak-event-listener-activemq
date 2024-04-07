@@ -29,3 +29,8 @@ jobs:
 
       - name: Build
         run: mvn clean package
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./target/keycloak-to-activemq-*.jar
