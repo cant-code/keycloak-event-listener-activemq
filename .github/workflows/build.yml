@@ -30,7 +30,18 @@ jobs:
       - name: Build
         run: mvn clean package
 
+      - name: Get Version
+        run: MVN_VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: ./target/keycloak-to-activemq-*.jar
+          tag_name: $MVN_VERSION
+          generate_release_notes: true
+
+      - name: Bump Version
+        run: mvn release:update-versions -B
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
