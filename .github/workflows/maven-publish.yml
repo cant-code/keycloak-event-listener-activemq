@@ -2,7 +2,11 @@ name: Maven Package
 
 on:
   release:
-    types: [released]
+    types: [created, published, released]
+  workflow_run:
+    workflows: [Build]
+    types:
+      - completed
 
 jobs:
   build:
