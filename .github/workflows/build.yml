@@ -40,7 +40,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ./target/keycloak-to-activemq-*.jar
-          tag_name: $MVN_VERSION
+          tag_name: ${MVN_VERSION}
           generate_release_notes: true
 
       - name: Bump Version
